@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Youtube Video Player</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+  
+        <img src="img/logo.PNG" alt="Youtube-Icon" class="logo" />
+        <div class="search-box">
+          <input type="text" class="search-bar" placeholder="Search" />
+          <button class="search-btn">
+            <img src="img/search.PNG" alt="Search-Icon" />
+          </button>
+        </div>
+  
+        <div class="user-options">
+          <img src="img/video.PNG" alt="create-video-icon" />
+          <img src="img/bell.PNG" alt="notification-icon" />
+          <div class="user-dp">
+            <img src="img/profile-pic.png" alt="profile-icon" />
+          </div>
+        </div>
+      </nav>
+
+      <!-- video-player -->
+      <div class="video-player-container">
+        <div id="video-player"></div>
+      </div>
+
+      <script src="./video.js" type="module"></script>
+</body>
+</html>

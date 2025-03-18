@@ -1,64 +1,239 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.main{
+*:focus {
+    outline: none;
+}
+
+body {
+    position: relative;
+    background: #f0f0f0;
+    font-family: "roboto", sans-serif;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+    z-index: 2;
+}
+
+.toggle-btn {
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translate(-50%);
+    background: #979797;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 0;
+}
+
+.toggle-btn span:nth-child(3) {
+    top: 10%;
+}
+
+.logo {
+    height: 30px;
+    margin: -10px 30px 0;
+    cursor:pointer;
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    width: 50%;
+    height: 35px;
+    margin-left:150px;
     display: flex;
 }
 
-.left{
-    width:20%;
-    background-color:white;
+.search-bar {
+    width: 85%;
+    height: 100%;
+    border: 2px solid #dbdbdb;
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
 }
 
-.right{
-    width: 80%;
-    background-color: rgb(226, 240, 237);
-    
+.search-btn {
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
+    cursor: pointer;
 }
 
-.search{
+.search-btn img {
+    height: 100%;
+}
+
+.user-options {
+    height: 35px;
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-dp {
+    cursor: pointer;
     height: 30px;
-    border-radius: 20px;
-    padding-left: 15px;
-    margin-top: 10px; 
-    margin-left: 100px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-dp img {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    min-width: 250px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    padding-right: 10px;
+    overflow-y: auto;
+    z-index: 3;
+}
+
+.links {
+    display: block;
+    width: 250px;
+    height:60px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    color: #242424;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none; 
+}
+
+.links img {
+    height: 25px;
+    margin-right: 20px;
+}
+
+.links:hover,
+.links.active {
+    background: #f0f0f0;
+}
+
+.filters {
+    position: fixed;
+    left: 250px;
+    top: 60px;
+    width: calc(100% - 250px);
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: none;
+}
+
+.filter-options {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    margin-right: 10px;
+    color: #242424;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options.active {
+    color: #fff;
+    background: #242424;
+}
+
+#video-container{
+    width:calc(100 - 250px);
+    margin-top: 140px;
+    margin-left:250px;
+    padding:20px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:20px 5px;
+    overflow-x:hidden;
+}
+
+.video{
+    max-height:250px;
+    height:auto;
+    cursor:pointer;
+}
+
+.thumbnail{
+    width:100%;
+    height:150px;
+    object-fit: cover;
+}
+
+.content{
+    width:100%;
+    height:100px;
+    padding:10px;
+    display:flex;
     justify-content: space-between;
 }
 
-.create{
-    display: inline;
-    margin-left: 735px;
+.channel-icon{
+    height:35px;
+    width:35px;
+    border-radius:50%;
 }
 
-.head{
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin-left: 10px;
+.info{
+    width:calc(100%-46px);
 }
 
-.all{
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 6px;
-    text-align:inherit;
-    color: #000;
-    background-color: gainsboro;
+.title{
+    font-size: 14px;
+    font-weight: 600;
+    overflow:hidden;
 }
 
-.you{
-    display: inline;
+.channel-name{
+    font-size: 14px;
+    margin-top:10px;
 }
 
-.left-side{
-    margin-left: 20px;
-}
 
-.sc{
-   display: flex;
-   margin-right:30%;
-   gap: 15px;
-   margin-top: 15px;
+.video-player-container{
+    margin-top:70px;
 }
